@@ -17,6 +17,7 @@ describe "edits a song", :type => :feature do
     attributes = Song.attribute_names - ['id']
     attributes.each do |attribute|
       expect(page).to have_field("song[#{attribute}]", with: song.send(attribute))
+
     end
     expect(page).to have_button 'Save Changes'
   end
